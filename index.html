@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cipher App</title>
+        <link href="styles/styles.css" rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC" rel="stylesheet">
+    </head>
+    <body>
+        <div id='body'>
+            <h1>Cipher App</h1>
+            <div id='encoded-container'>
+                <div>
+                    <p class='boxy'>Encoding or Decoding?</p>
+                    <select id='e-or-d'>
+                        <option class='option' value='decoder'>Decoding</option>
+                        <option class='option' value='encoder'>Encoding</option>   
+                    </select>
+                </div>
+                <p class="boxy">Enter the Message</p>
+                <textarea id="message" type="text" placeholder="type message here"></textarea>
+            </div>
+            <div>
+                <p class="boxy">Select Your Cipher Type</p>
+                <select id='cipher-type'>
+                    <option class='option' value='caesar-shift'>Caesar Shift Cipher</option>
+                    <option class='option' value='substitution'>Substitution Cipher</option>
+                    <option class='option' value='vigenere'>Vigen&egrave;re Cipher</option>
+                </select>
+            </div>
+            <div id='parameters'>
+                <div class="border" id='caesar-parameters'>
+                    <p id='caesar-question' class="boxy">How many letters should each letter shift</p>
+                    <select id='caesar-number'>
+                        <option value = '1'>1</option>
+                        <option value = '2'>2</option>
+                        <option value = '3'>3</option>
+                        <option value = '4'>4</option>
+                        <option value = '5'>5</option>
+                        <option value = '6'>6</option>
+                        <option value = '7'>7</option>
+                        <option value = '8'>8</option>
+                        <option value = '9'>9</option>
+                        <option value = '10'>10</option>
+                        <option value = '11'>11</option>
+                        <option value = '12'>12</option>
+                        <option value = '13'>13</option>
+                        <option value = '14'>14</option>
+                        <option value = '15'>15</option>
+                        <option value = '16'>16</option>
+                        <option value = '17'>17</option>
+                        <option value = '18'>18</option>
+                        <option value = '19'>19</option>
+                        <option value = '20'>20</option>
+                        <option value = '21'>21</option>
+                        <option value = '22'>22</option>
+                        <option value = '23'>23</option>
+                        <option value = '24'>24</option>
+                        <option value = '25'>25</option>
+                    </select>
+                </div>
+                <div class="border" id='vigenere-parameters'>
+                    <p class="boxy">Keyword</p>
+                    <input id='keyword' placeholder='type keyword here'>
+                </div>
+                <div class="border" id='substitution-parameters'>
+                    <table>
+                            <tr>
+                                <td>
+                                    a = <br/>
+                                    <select class='alphaGen' id='aIs'>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    b = <br/>
+                                    <select class="alphaGen" id="bIs">
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    c = <br/>
+                                    <select class="alphaGen" id = 'cIs'>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    d = <br/>
+                                    <select class="alphaGen" id ='dIs'>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    e = <br/>
+                                    <select class="alphaGen" id='eIs'>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option> 
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    f = <br/>
+                                    <select class="alphaGen" id='fIs'>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    g = <br/>
+                                    <select class= "alphaGen" id='gIs'>                                       
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    h = <br/>
+                                    <select class ="alphaGen" id='hIs'>                                       
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option> 
+                                    </select>
+                                </td>
+                                <td>
+                                    i = <br/>
+                                    <select class="alphaGen" id='iIs'>                                    
+                                            <option value="i">i</option>
+                                            <option value="j">j</option>
+                                            <option value="k">k</option>
+                                            <option value="l">l</option>
+                                            <option value="m">m</option>
+                                            <option value="n">n</option>
+                                            <option value="o">o</option>
+                                            <option value="p">p</option>
+                                            <option value="q">q</option>
+                                            <option value="r">r</option>
+                                            <option value="s">s</option>
+                                            <option value="t">t</option>
+                                            <option value="u">u</option>
+                                            <option value="v">v</option>
+                                            <option value="w">w</option>
+                                            <option value="x">x</option>
+                                            <option value="y">y</option>
+                                            <option value="z">z</option>
+                                            <option value="a">a</option>
+                                            <option value="b">b</option>
+                                            <option value="c">c</option>
+                                            <option value="d">d</option>
+                                            <option value="e">e</option>
+                                            <option value="f">f</option>
+                                            <option value="g">g</option>
+                                            <option value="h">h</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    j = <br/>
+                                    <select class="alphaGen" id='jIs'>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                    </select> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    k = <br/>
+                                    <select id="kIs">
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    l = <br/>
+                                    <select class= "alphaGen" id = 'lIs'>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    m = <br/>
+                                    <select class="alphaGen" id ='mIs'>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    n = <br/>
+                                    <select class="alphaGen" id='nIs'>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option> 
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    o = <br/>
+                                    <select class="alphaGen" id='oIs'>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                    </select>  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    p = <br/>
+                                    <select class="alphaGen" id='pIs'>                                       
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    q = <br/>
+                                    <select class="alphaGen" id='qIs'>                                       
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option> 
+                                    </select>
+                                </td>
+                                <td>
+                                    r = <br/>
+                                    <select class="alphaGen" id='rIs'>                                    
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    s = <br/>
+                                    <select class="alphaGen" id='sIs'>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    t = <br/>
+                                    <select class="alphaGen" id="tIs">
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                    </select>  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    u = <br/>
+                                    <select class="alphaGen" id = 'uIs'>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    v = <br/>
+                                    <select class= "alphaGen" id ='vIs'>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    w = <br/>
+                                    <select class="alphaGen" id='wIs'>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option> 
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    x = <br/>
+                                    <select class="alphaGen" id='xIs'>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    y = <br/>
+                                    <select class="alphaGen" id='yIs'>                                       
+                                        <option value="y">y</option>
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                    </select>   
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    z = <br/>
+                                    <select class="alphaGen" id='zIs'>                                       
+                                        <option value="z">z</option>
+                                        <option value="a">a</option>
+                                        <option value="b">b</option>
+                                        <option value="c">c</option>
+                                        <option value="d">d</option>
+                                        <option value="e">e</option>
+                                        <option value="f">f</option>
+                                        <option value="g">g</option>
+                                        <option value="h">h</option>
+                                        <option value="i">i</option>
+                                        <option value="j">j</option>
+                                        <option value="k">k</option>
+                                        <option value="l">l</option>
+                                        <option value="m">m</option>
+                                        <option value="n">n</option>
+                                        <option value="o">o</option>
+                                        <option value="p">p</option>
+                                        <option value="q">q</option>
+                                        <option value="r">r</option>
+                                        <option value="s">s</option>
+                                        <option value="t">t</option>
+                                        <option value="u">u</option>
+                                        <option value="v">v</option>
+                                        <option value="w">w</option>
+                                        <option value="x">x</option>
+                                        <option value="y">y</option>
+                                    </select>
+                                </td>
+                            </tr>
+                    </table> 
+            </div>  
+            <div>
+                <button id ="solve">Solve</button>
+                <h3>Result</h3>
+                <p id = "result"></p>
+            </div>
+            <div>
+                <h3>Previous Results</h3>
+                <button id = 'clear'>Clear Log</button>
+            </div>
+            <div id = 'result-list'></div>
+            <div id="note">
+                <p class='justABox'><span><em>Note: This application is designed to decode and encode text based messages.  
+                    It will not accept numbers or special characters with the following exceptions: period 
+                    (.), comma (,), semicolon (;) dash (-), 
+                    question mark (?), exclamation point (!), apostrophe (') and
+                     quotation marks ("). Messages with numbers or other special characters will be rejected.</em></p>
+            </div>
+        </div>
+        <script src="./scripts/bundle.js"></script>
+    </body>
+</html>
+
