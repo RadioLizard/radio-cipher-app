@@ -1,0 +1,134 @@
+/*GENERAL SECTION*/
+body{
+    font-family: 'IM Fell Great Primer SC', serif;
+    background-color: #222;
+    font-size: 1.2em;
+}
+
+button {
+    font-family: inherit;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    background-color: #222;
+    border: none;
+    color: #efefef;
+    padding: 1%;
+    box-shadow: 0 5px #666;
+    font-size: 1.2em;
+}
+
+button:active {
+    background-color: #17191c;
+    box-shadow: 0 2px #333;
+    transform: translateY(2px);
+}
+
+table {
+    margin: auto;
+    padding-top: 2%;
+}
+
+h1{
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: #333;
+    border-top-style: solid;
+    border-top-width: 3px;
+    border-top-color: #333;
+}
+
+h3{
+    padding:1%;
+    margin: auto;
+    width: 80%;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #333;
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-top-color: #333;
+} 
+
+select, textarea, input, .option{
+    font-family: 'IM Fell Great Primer SC', serif;
+    text-align: center;
+    font-size: 1.2em;
+    margin:3%;
+}
+
+option {
+    font-family: 'IM Fell Great Primer SC', serif;
+    text-align: center;
+    font-size: .6em;
+}
+
+/*CLASSES SECTION*/
+.boxy{
+    width: 45%;
+    margin: auto;
+    padding: 1%;
+    border-style: groove;
+    border-color: #333;
+    border-width: 1px;
+}
+
+.justABox{
+    border-style: groove;
+    border-color: #333;
+    border-width: 1px; 
+}
+
+.line-please{
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #333;
+    padding-bottom: 1%;
+    width: 80%;
+    margin: auto;
+    font-size: .85em;
+}
+/*IDS SECTION*/
+#body{
+    background-color: #e5dfd3;
+    width: 70%;
+    height: 80%;
+    text-align: center;
+    padding: 2%;
+    margin: auto;
+}
+
+#caesar-parameters{
+    display: none;
+}
+
+#vigenere-parameters{
+    display:none;
+}
+
+#substitution-parameters{
+    display:none;
+} 
+
+#result-list{
+    font-style: italic;
+}
+
+#note{
+    padding: 5%;
+    text-align: center;
+}
+
+#message {
+    width: 70%;
+    height: 2.4em;
+    font-size: 1.2em;
+}
+
+#note{
+    font-size: .72em;
+}
+
+#result{
+    font-size: 1.5em;
+}
+
