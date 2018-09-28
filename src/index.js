@@ -1,8 +1,7 @@
 
 import {getFilters} from './filters'
 import {displaySolverDOM, generateSolvedDOM } from './views'
-import { clearMessages, loadMessages, getMessages, renderMessages } from './messages';
-let messages = getMessages()
+import { clearMessages, loadMessages, renderMessages } from './messages';
 let filters = getFilters()
 
 loadMessages()
