@@ -23,10 +23,10 @@ const displaySolverDOM = () => {
         caesarParameters.style = "display: block"
         vigenereParameters.style = "display: none"
         substitutionParameters.style = "display: none"
-        if(filters.eOrD === 'decoder'){
+        if(filters.eOrD === 'decoded'){
             caesarsQuestion.textContent = "How many letters should each letter shift backward?"
         }
-        else if(filters.eOrD === 'encoder'){
+        else if(filters.eOrD === 'encoded'){
             caesarsQuestion.textContent = "How many letters should each letter shift forward?"
         }
     }
@@ -37,6 +37,11 @@ const displaySolverDOM = () => {
     }
     else if(filters.cipherType === 'substitution'){
         substitutionParameters.style = 'display: block'
+        vigenereParameters.style = 'display: none'
+        caesarParameters.style = 'display: none'
+    }
+    else if(filters.cipherType === 'atbash'){
+        substitutionParameters.style = 'display: none'
         vigenereParameters.style = 'display: none'
         caesarParameters.style = 'display: none'
     }
