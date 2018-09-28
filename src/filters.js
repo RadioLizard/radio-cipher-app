@@ -1,6 +1,6 @@
 let filters = {
     cipherType : "caesar-shift",
-    eOrD: "decoder"
+    eOrD: "decoded"
 }
 
 let getFilters = () => filters
